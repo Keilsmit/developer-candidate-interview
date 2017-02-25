@@ -2,18 +2,10 @@ class Tester
   class T1
     def palindrome?(string)
       # first implementation
-      if string.length == 1 || string.length == 0
-        true
-      else
-        if string[0] == string[-1]
-          palindrome?(string[1..-2])
-        else
-          false
-        end
-      end
+      string_response = string.downcase.scan(/w/)
+      string_response = string_response.reverse
     end
   end
-
 
   class T2
     def palindrome?(string)
@@ -25,6 +17,4 @@ class Tester
       end
     end
   end
-
-
 end

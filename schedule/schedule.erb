@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- Stylesheets go here. -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+  </head>
+  <body>
+
+
+<div class="container-fluid">
+  <table class="table table-striped">
+    <h5>Lesson Schedule:</h5>
+    <tr>
+      <th>Student Name</th>
+      <th>Class Type </th>
+      <th>Instructor</th>
+      <th>Start/End Date</th>
+      <th>Start/End Time</th>
+    </tr>
+
+    <% a_group_lesson.each do |group_lesson| %>
+    <tr>
+      <td><%= group_lesson.name %></td>
+      <td><%= group_lesson.training_type %></td>
+      <td><%= group_lesson.with_instructor %></td>
+      <td><%= group_lesson.start_date %>  "/"  <% group_lesson.end_date %></td>
+      <td><%= group_lesson.start_time %>  "/" <% group_lesson.end_time %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+
+
+
+<div class="center-block">
+  <table class="table table-striped">
+    <tr>
+      <th>Private Lesson(s)</th>
+      <th> Number of Trips:</th>
+      <th>Bonus:</th>
+    </tr>
+
+
+    <% a_private_lesson.each do |private_lesson| %>
+
+    <tr>
+      <td><%= private_lesson.name %></td>
+      <td><%= a_private_lesson.name %></td>
+
+      <td>
+        <%= trips.reduce(0) {|sum, value| sum + value.money}/10.0 %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<!-- Top table Ends here -->
+
+
+<div>
+  <!-- <img src="" class="img-rounded center-block"> -->
+</div>
+
+
+
+
+
+  </body>
+</html>

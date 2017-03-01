@@ -52,8 +52,8 @@
   <table class="table table-striped">
     <tr>
       <th>Private Lesson(s)</th>
-      <th> Number of Trips:</th>
-      <th>Bonus:</th>
+      <th></th>
+      <th></th>
     </tr>
 
 
@@ -64,17 +64,21 @@
       <td><%= a_private_lesson.name %></td>
 
       <td>
-        <%= trips.reduce(0) {|sum, value| sum + value.money}/10.0 %>
+        <%=  %>
       </td>
     </tr>
     <% end %>
   </table>
 </div>
-<!-- Top table Ends here -->
+
 
 
 <div>
-  <!-- <img src="" class="img-rounded center-block"> -->
+  <% private_lesson do |instructor| %>
+    <% if (private_lesson.start_date..private_lesson.end_date) === (group_lesson.start_date..group_lesson.end_date) %>
+      <%= group_lesson.request_id %>
+      <%= group_
+
 </div>
 
 

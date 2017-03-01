@@ -14,7 +14,7 @@ class GroupLesson
 
   def initialize(request_id:, name:, training_type:, start_date:, start_time:, end_date:, end_time:, with:)
     @request_id = request_id
-    @name = name
+    @user_name = name
     @training_type = training_type
     @start_date = start_date
     @start_time = start_time
@@ -23,20 +23,21 @@ class GroupLesson
     @with_instructor = with
   end
 
-  def
-    # if/else statement to find student_availabilty
+  def student_available?
+    student_available = []
+    student_available << @start_time && @end_time && @start_date && @end_date && @with_instructor
+      if student_available === object.start_time &&
+                               GroupLesson.new.end_time &&
+                               GroupLesson.new.start_date &&
+                               GroupLesson.new.end_date
+        return "student not available"
+      elsif GroupLesson.new.with_instructor == PrivateLesson.new.name
+        return "instructor not available"
+      else
+      end
   end
 
-  def
-    # if/else statement to find instructor_availabilty
-  end
 
 
 
-end
-
-
-a_group_lesson = []
-data.each do |row|
-  a_group_lesson << GroupLesson.new(row)
 end

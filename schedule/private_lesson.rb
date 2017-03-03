@@ -16,10 +16,10 @@ class PrivateLesson
     @instructor_name = name
     @training_type = training_type
     @max_participants = max_participants
-    @start_date = start_date
-    @start_time = start_time
-    @end_date = end_date
-    @end_time = end_time
+    @start_date = start_date.to_datetime
+    @start_time = start_time.to_datetime
+    @end_date = end_date.to_datetime
+    @end_time = end_time.to_datetime
     @duration = duration
   end
 
